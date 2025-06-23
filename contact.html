@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contactez La Petite Graine à Limoges pour toute question, commande ou renseignement. Cuisine végétarienne, salon de thé et plats à emporter.">
+  <meta name="keywords" content="La Petite Graine, restaurant végétarien, salon de thé, plats à emporter, Limoges, contact">
+  <meta name="author" content="La Petite Graine">
+  <meta property="og:title" content="Nous contacter - La Petite Graine" />
+  <meta property="og:description" content="Contactez-nous pour toute question, commande ou renseignement." />
+  <meta property="og:image" content="https://www.example.com/assets/images/logo-la-petite-graine.png" />
+  <meta property="og:url" content="https://www.example.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow">
+  <title>Nous contacter - La Petite Graine</title>
+  <link rel="icon" href="assets/images/logo-la-petite-graine.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f6fdf7;
+      color: #2e7d32;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    main {
+      max-width: 800px;
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid #dce8dc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    button {
+      padding: 0.8rem;
+      background-color: #4caf50;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover { background-color: #388e3c; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Petite Graine",
+    "image": "https://www.example.com/assets/images/logo-la-petite-graine.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2 Rue Dalesme",
+      "addressLocality": "Limoges",
+      "postalCode": "87000",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33587296747",
+    "openingHours": [
+      "Tu-Fr 10:00-18:00",
+      "Sa 10:00-19:00"
+    ],
+    "url": "https://www.example.com"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">La Petite Graine</a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="carte.html">La carte</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="nos-produits.html">Nos produits</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="#" id="lang-switch"><img src="assets/images/anglais.png" alt="Switch to English" style="height: 20px; vertical-align: middle;" /></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Contact</h2>
+    <section style="text-align: center; line-height: 1.8;">
+      <p><strong>Adresse :</strong><br>
+        <a href="https://www.google.com/maps/search/?api=1&query=2+Rue+Dalesme+87000+Limoges" target="_blank" style="color: #2e7d32; text-decoration: underline;">
+          2 Rue Dalesme, 87000 Limoges, France
+        </a>
+      </p>
+      <p><strong>Téléphone :</strong><br>
+        <a href="tel:+33587296747" style="color: #2e7d32; text-decoration: underline;">05 87 29 67 47</a><br>
+        <a href="tel:+33684686877" style="color: #2e7d32; text-decoration: underline;">06 84 68 68 77</a>
+      </p>
+      <p><strong>Email :</strong><br>
+        <a href="mailto:nbp.restaurant@gmail.com" style="color: #2e7d32; text-decoration: underline;">nbp.restaurant@gmail.com</a>
+      </p>
+    </section>
+
+    <section style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #dce8dc;">
+      <h3 style="color: #2e7d32; margin-bottom: 1rem; text-align: center;">Infos pratiques</h3>
+      <ul style="list-style: none; padding: 0; text-align: center; line-height: 1.6; color: #444;">
+        <li>Nous ne prenons pas de réservations.</li>
+        <li>Service uniquement pour le déjeuner.</li>
+        <li>Tous nos plats sont disponibles à emporter.</li>
+        <li>Réservez vos plats avant 14h30 et récupérez les jusqu’à 18h.</li>
+        <li>Salon de thé toute la journée.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <div class="footer-column">
+      <p>2 Rue Dalesme<br />87000 Limoges<br />France</p>
+    </div>
+    <div class="footer-column footer-logo">
+      <img src="assets/images/logo-la-petite-graine.png" alt="Logo La Petite Graine" loading="lazy" />
+    </div>
+    <div class="footer-column">
+      <p><em>Horaires :</em><br />
+      <em>Mardi - Vendredi : 10h - 18h</em><br />
+      <em>Samedi : 10h - 19h</em></p>
+      <p style="margin-top: 1rem;">
+        <a href="tel:+33587296747" style="color: white; text-decoration: underline;">05 87 29 67 47</a><br />
+        <a href="tel:+33684686877" style="color: white; text-decoration: underline;">06 84 68 68 77</a><br />
+        <a href="mailto:nbp.restaurant@gmail.com" style="color: white; text-decoration: underline;">nbp.restaurant@gmail.com</a>
+      </p>
+      <div class="social-icons" style="margin-top: 1rem;">
+        <a href="https://www.facebook.com/cantinelapetitegraine/" target="_blank" title="Facebook" style="margin: 0 5px;">
+          <img src="assets/images/logo-facebook.png" alt="Facebook" loading="lazy" />
+        </a>
+        <a href="https://www.instagram.com/lapetitegraine/?hl=fr" target="_blank" title="Instagram" style="margin: 0 5px;">
+          <img src="assets/images/logo-instagram.png" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://www.youtube.com/watch?v=wNPdCmf6W2w" target="_blank" title="YouTube" style="margin: 0 5px;">
+          <img src="assets/images/logo-youtube.png" alt="YouTube" loading="lazy" />
+        </a>
+      </div>
+    </div>
+    <div style="width: 100%; margin-top: 2rem; font-size: 0.9rem;">
+      © 2025 La Petite Graine. Tous droits réservés.
+    </div>
+  </footer>
+  <script>
+    const translations = {
+      en: {
+        "Accueil": "Home",
+        "La carte": "Menu",
+        "À propos": "About",
+        "Nos produits": "Our Products",
+        "Contact": "Contact",
+        "Nous contacter": "Contact us",
+        "Adresse": "Address",
+        "Téléphone": "Phone",
+        "Adresse email": "Email address",
+        "Horaires :": "Opening hours:",
+        "Mardi - Vendredi : 10h - 18h": "Tuesday - Friday: 10am - 6pm",
+        "Samedi : 10h - 19h": "Saturday: 10am - 7pm",
+        "Infos pratiques": "Useful information",
+        "Nous ne prenons pas de réservations.": "We do not take reservations.",
+        "Service uniquement pour le déjeuner.": "Lunch service only.",
+        "Tous nos plats sont disponibles à emporter.": "All our dishes are available for takeout.",
+        "Réservez vos plats avant 14h30 et récupérez les jusqu’à 18h.": "Pre-order your meals before 2:30 p.m. and pick them up until 6 p.m.",
+        "Salon de thé toute la journée.": "Tea room open all day."
+      },
+      fr: {}
+    };
+
+    for (const [fr, en] of Object.entries(translations.en)) {
+      translations.fr[en] = fr;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let currentLang = urlParams.get("lang") || "fr";
+
+    function applyTranslation(toLang) {
+      const trans = translations[toLang];
+      const elements = document.querySelectorAll("a, h1, h2, h3, p, button, input, textarea, li, em, strong");
+      elements.forEach(el => {
+        if (el.placeholder) {
+          Object.entries(trans).forEach(([fr, en]) => {
+            if (el.placeholder.includes(fr)) {
+              el.placeholder = el.placeholder.replace(fr, en);
+            }
+          });
+        }
+        if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+          Object.entries(trans).forEach(([fr, en]) => {
+            if (el.textContent.includes(fr)) {
+              el.textContent = el.textContent.replace(fr, en);
+            }
+          });
+        }
+      });
+
+      // Update language switch icon
+      const icon = toLang === "fr" ? "anglais" : "francais";
+      const altText = toLang === "fr" ? "Switch to English" : "Switch to Français";
+      document.getElementById("lang-switch").innerHTML =
+        `<img src="assets/images/${icon}.png" alt="${altText}" style="height: 20px; vertical-align: middle;" />`;
+
+      // Update links to keep language param
+      document.querySelectorAll("nav a").forEach(link => {
+        const href = new URL(link.href, window.location.origin);
+        href.searchParams.set("lang", toLang);
+        link.href = href.toString();
+      });
+
+      // Adjust the menu link based on language
+      const menuLink = Array.from(document.querySelectorAll('nav a')).find(a => a.textContent.includes("Menu") || a.textContent.includes("La carte"));
+      if (menuLink) {
+        menuLink.setAttribute('href', toLang === 'en' ? 'menu.html' : 'carte.html');
+      }
+    }
+
+    applyTranslation(currentLang);
+
+    document.getElementById("lang-switch").addEventListener("click", function (e) {
+      e.preventDefault();
+      const toLang = currentLang === "fr" ? "en" : "fr";
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.set("lang", toLang);
+      window.location.href = newUrl.toString();
+    });
+
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      header.classList.toggle("shrunk", window.scrollY > 50);
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('active');
+      if (mainNav.classList.contains('active')) {
+        menuToggle.textContent = '✖';
+      } else {
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+</html>

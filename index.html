@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Petite Graine</title>
+  <link rel="icon" href="assets/images/logo-la-petite-graine.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f6fdf7;
+      color: #2e7d32;
+      line-height: 1.6;
+      padding-top: 60px;
+    }
+
+    /* .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1.2rem;
+      color: #388e3c;
+    } */
+
+    .fullscreen-hero {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 60px);
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/acceuil.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .fullscreen-hero img {
+      max-width: 180px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+    }
+
+    .fullscreen-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      margin-bottom: 1rem;
+    }
+
+    .fullscreen-hero .subtitle {
+      font-size: 1.6rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      max-width: 700px;
+      margin-bottom: 1rem;
+    }
+
+    .fullscreen-hero .hero-btn {
+      background-color: #ffeb3b;
+      color: #2e7d32;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .fullscreen-hero .hero-btn:hover {
+      background-color: #fdd835;
+    }
+
+    .welcome-text {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #2e7d32;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    section {
+      max-width: 900px;
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #1b5e20;
+      margin-bottom: 1.5rem;
+    }
+
+    .ingredients {
+      font-style: italic;
+      color: #555;
+      margin-top: 1rem;
+    }
+
+    .schedule {
+      max-width: 1000px;
+      background: linear-gradient(145deg, #ffffff, #f1f8e9);
+      margin: 3rem auto;
+      padding: 2.5rem 3rem;
+      border-radius: 20px;
+      border: none;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .schedule h2 {
+      font-size: 2rem;
+      color: #1b5e20;
+      border-left: 6px solid #81c784;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .schedule-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      border: 1px solid #dcedc8;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .schedule-entry:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .schedule-entry strong {
+      font-size: 1.1rem;
+      color: #2e7d32;
+    }
+
+    .schedule-entry span {
+      font-weight: 500;
+      color: #424242;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #616161;
+    }
+
+    .open-special {
+      margin-top: 2rem;
+      background: #fffde7;
+      padding: 1rem 1.5rem;
+      border-left: 6px solid #ffca28;
+      border-radius: 12px;
+      color: #ef6c00;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .open-special:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .daily-special {
+      background: linear-gradient(135deg, #e8f5e9, #ffffff);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .daily-special h2 {
+      color: #1b5e20;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .daily-special h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #81c784;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    .daily-special p {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .daily-special .ingredients {
+      font-size: 1rem;
+      color: #4e342e;
+      font-style: italic;
+    }
+
+    .closed {
+      color: #c62828;
+    }
+
+    .open-special {
+      color: #ef6c00;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .note {
+      font-style: italic;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .location {
+      max-width: 1000px;
+      background: linear-gradient(145deg, #ffffff, #f1f8e9);
+      margin: 2rem auto;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .location h2 {
+      font-size: 1.8rem;
+      color: #1b5e20;
+      border-left: 5px solid #81c784;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .location p {
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .location em {
+      color: #4caf50;
+      font-weight: 500;
+    }
+    
+
+    .accueil-gallery {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .image-item {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .image-item img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      max-height: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .caption {
+      margin-top: 0.5rem;
+      font-style: italic;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">La Petite Graine</a>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      ☰
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="carte.html">La carte</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="nos-produits.html">Nos produits</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" id="lang-switch"><img src="assets/images/anglais.png" alt="Switch to English" style="height: 20px; vertical-align: middle;" /></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="fullscreen-hero">
+      <img src="assets/images/logo-la-petite-graine.png" alt="Logo La Petite Graine" loading="eager" />
+      <h1>Bienvenue chez La Petite Graine</h1>
+      <p class="subtitle">Cantine végétalienne — fait maison & sans gluten</p>
+      <a id="hero-btn" href="carte.html" class="hero-btn">Voir le menu</a>
+    </section>
+
+    <section class="accueil-gallery">
+      <div class="image-grid">
+        <div class="image-item">
+          <img src="assets/images/devanture.jpg" alt="Devanture du restaurant" loading="lazy" />
+          <p class="caption">Notre devanture à Limoges</p>
+        </div>
+        <div class="image-item">
+          <img src="assets/images/jardinage.jpg" alt="Jardinage" loading="lazy" />
+          <p class="caption">Des produits cultivés avec soin</p>
+        </div>
+        <div class="image-item">
+          <img src="assets/images/Fenouil.jpg" alt="Plat végétalien" loading="lazy" />
+          <p class="caption">Des plats faits maison, gourmands & végétaliens</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="daily-special">
+      <h2>Plat du jour</h2>
+      <p><strong>Vendredi 20 Juin</strong></p>
+      <p>Risotto de sarrasin crémeux aux épinards & tomates séchées</p>
+      <p class="ingredients" id="ingredients">
+        <span class="line1">Oignons rouges, poivrons, fèves de soja</span><br />
+        <span class="line2">Parmesan de cajou, cébette & ciboulette</span>
+      </p>
+    </section>
+
+    <section class="schedule">
+      <h2>Horaires d'ouverture</h2>
+      <div class="schedule-entry"><strong>Mardi à Vendredi :</strong><span>10h – 18h</span></div>
+      <div class="schedule-entry"><strong>Samedi :</strong><span>10h – 19h</span></div>
+      <div class="schedule-entry closed"><strong>Dimanche & Lundi :</strong><span>Fermé</span></div>
+      <div class="schedule-entry"><strong>Déjeuner :</strong><span>12h – 14h30</span></div>
+      <p class="note">Sans réservation</p>
+      <p class="open-special">📢 Ouvert en continu le <strong>Samedi 21 Juin</strong> (Midi & Soir)</p>
+    </section>
+
+    <section class="location">
+      <h2>Où nous trouver</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+        <div style="flex: 1; min-width: 260px;">
+          <p>2 Rue Dalesme<br />87000 Limoges<br />France</p>
+          <p><em>Coordonnées GPS :</em><br />
+          45.8329659, 1.2574724</p>
+        </div>
+        <div style="flex: 2; min-width: 300px;">
+          <iframe
+            src="https://www.google.com/maps?q=2+Rue+Dalesme,+87000+Limoges,+France&output=embed"
+            width="100%"
+            height="340"
+            style="border:0; border-radius: 8px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <div class="footer-column">
+      <p>2 Rue Dalesme<br />87000 Limoges<br />France</p>
+    </div>
+    <div class="footer-column footer-logo">
+      <img src="assets/images/logo-la-petite-graine.png" alt="Logo La Petite Graine" loading="lazy" />
+    </div>
+    <div class="footer-column">
+      <p><em>Horaires :</em><br />
+      <em>Mardi - Vendredi : 10h - 18h</em><br />
+      <em>Samedi : 10h - 19h</em></p>
+      <p style="margin-top: 1rem;">
+        <a href="tel:+33587296747" style="color: white; text-decoration: underline;">05 87 29 67 47</a><br />
+        <a href="tel:+33684686877" style="color: white; text-decoration: underline;">06 84 68 68 77</a><br />
+        <a href="mailto:nbp.restaurant@gmail.com" style="color: white; text-decoration: underline;">nbp.restaurant@gmail.com</a>
+      </p>
+      <div class="social-icons" style="margin-top: 1rem;">
+        <a href="https://www.facebook.com/cantinelapetitegraine/" target="_blank" title="Facebook" style="margin: 0 5px;">
+          <img src="assets/images/logo-facebook.png" alt="Facebook" loading="lazy" />
+        </a>
+        <a href="https://www.instagram.com/lapetitegraine/?hl=fr" target="_blank" title="Instagram" style="margin: 0 5px;">
+          <img src="assets/images/logo-instagram.png" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://www.youtube.com/watch?v=wNPdCmf6W2w" target="_blank" title="YouTube" style="margin: 0 5px;">
+          <img src="assets/images/logo-youtube.png" alt="YouTube" loading="lazy" />
+        </a>
+      </div>
+    </div>
+    <p style="width: 100%; margin-top: 2rem; font-size: 0.9rem;">© 2025 La Petite Graine. Tous droits réservés.</p>
+  </footer>
+  <script>
+    const translations = {
+      en: {
+        "Accueil": "Home",
+        "À propos": "About",
+        "Nos produits": "Our Products",
+        "La carte": "Menu",
+        "Contact": "Contact",
+        "Bienvenue chez La Petite Graine": "Welcome to La Petite Graine",
+        "Cantine végétalienne — fait maison & sans gluten": "Vegan canteen — homemade & gluten-free",
+        "Plat du jour": "Dish of the Day",
+        "Horaires d'ouverture": "Opening Hours",
+        "Mardi à Vendredi :": "Tuesday to Friday:",
+        "Samedi :": "Saturday:",
+        "Dimanche & Lundi : Fermé": "Sunday & Monday: Closed",
+        "Dimanche & Lundi :": "Sunday & Monday:",
+        "Déjeuner :": "Lunch:",
+        "Sans réservation": "No reservation needed",
+        
+        // =============================
+        // Section annonces
+        // =============================
+        
+        "📢 Ouvert en continu le Samedi 21 Juin (Midi & Soir)": "📢 Open all day Saturday, June 21 (Lunch & Dinner)",
+        
+        // =============================
+        // Section Plat du jour
+        // =============================
+        
+        "Vendredi 20 Juin": "Friday, June 20",
+        "Risotto de sarrasin crémeux aux épinards & tomates séchées": "Creamy buckwheat risotto with spinach & sun-dried tomatoes",
+        "Oignons rouges, poivrons, fèves de soja": "Red onions, bell peppers, soybeans",
+        "Parmesan de cajou, cébette & ciboulette": "Cashew parmesan, spring onion & chives",
+        
+        "10h – 18h": "10am – 6pm",
+        "10h – 19h": "10am – 7pm",
+        "12h – 14h30": "12pm – 2:30pm",
+        "Horaires :": "Opening Hours:",
+        "Mardi - Vendredi : 10h - 18h": "Tuesday - Friday: 10am - 6pm",
+        "Samedi : 10h - 19h": "Saturday: 10am - 7pm",
+        "Où nous trouver": "Where to find us",
+        "Coordonnées GPS :": "GPS Coordinates:",
+        "Chez La Petite Graine, nous vous accueillons avec plaisir dans un lieu chaleureux et engagé, où chacun peut savourer une cuisine végétalienne faite maison, quelle que soit son alimentation habituelle.": "At La Petite Graine, we warmly welcome everyone to enjoy homemade vegan cuisine in a friendly and committed space, whatever your usual diet may be.",
+        "Notre devanture à Limoges": "Our storefront in Limoges",
+        "Des produits cultivés avec soin": "Carefully grown products",
+        "Des plats faits maison, gourmands & végétaliens": "Homemade, delicious & vegan dishes",
+        "Fermé": "Closed"
+      },
+      fr: {
+        "Home": "Accueil",
+        "About": "À propos",
+        "Our Products": "Nos produits",
+        "Menu": "La carte",
+        "Contact": "Contact",
+        "Welcome to La Petite Graine": "Bienvenue chez La Petite Graine",
+        "Vegan canteen — homemade & gluten-free": "Cantine végétalienne — fait maison & sans gluten",
+        "Dish of the Day": "Plat du jour",
+        "Opening Hours": "Horaires d'ouverture",
+        "Tuesday to Friday:": "Mardi à Vendredi :",
+        "Saturday:": "Samedi :",
+        "Sunday & Monday: Closed": "Dimanche & Lundi : Fermé",
+        "Sunday & Monday:": "Dimanche & Lundi :",
+        "Lunch:": "Déjeuner :",
+        "No reservation needed": "Sans réservation",
+        
+        // =============================
+        // Section annonces
+        // =============================
+        
+        "📢 Open all day Saturday, June 21 (Lunch & Dinner)": "📢 Ouvert en continu le Samedi 21 Juin (Midi & Soir)",
+        
+        // =============================
+        // Section Plat du jour
+        // =============================
+        
+        "Friday, June 20": "Vendredi 20 Juin",
+        "Creamy buckwheat risotto with spinach & sun-dried tomatoes": "Risotto de sarrasin crémeux aux épinards & tomates séchées",
+        "Red onions, bell peppers, soybeans": "Oignons rouges, poivrons, fèves de soja",
+        "Cashew parmesan, spring onion & chives": "Parmesan de cajou, cébette & ciboulette",
+        
+        "10am – 6pm": "10h – 18h",
+        "10am – 7pm": "10h – 19h",
+        "12pm – 2:30pm": "12h – 14h30",
+        "Opening Hours:": "Horaires :",
+        "Tuesday - Friday: 10am - 6pm": "Mardi - Vendredi : 10h - 18h",
+        "Saturday: 10am - 7pm": "Samedi : 10h - 19h",
+        "Where to find us": "Où nous trouver",
+        "GPS Coordinates:": "Coordonnées GPS :",
+        "At La Petite Graine, we warmly welcome everyone to enjoy homemade vegan cuisine in a friendly and committed space, whatever your usual diet may be.": "Chez La Petite Graine, nous vous accueillons avec plaisir dans un lieu chaleureux et engagé, où chacun peut savourer une cuisine végétalienne faite maison, quelle que soit son alimentation habituelle.",
+        "Our storefront in Limoges": "Notre devanture à Limoges",
+        "Carefully grown products": "Des produits cultivés avec soin",
+        "Homemade, delicious & vegan dishes": "Des plats faits maison, gourmands & végétaliens",
+        "Closed": "Fermé"
+      }
+    };
+
+let currentLang = 'fr';
+const urlParams = new URLSearchParams(window.location.search);
+const langFromURL = urlParams.get('lang');
+if (langFromURL) {
+  currentLang = langFromURL;
+  const trans = translations[currentLang];
+  document.querySelectorAll('a, h1, h2, p, li, .schedule-entry span, .schedule-entry strong').forEach(el => {
+    Object.keys(trans).sort((a, b) => b.length - a.length).forEach(fr => {
+      if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+        el.textContent = el.textContent.replace(fr, trans[fr]);
+      } else if (el.innerHTML.includes(fr)) {
+        el.innerHTML = el.innerHTML.replace(fr, trans[fr]);
+      }
+    });
+  });
+  // Also translate captions
+  document.querySelectorAll('.caption').forEach(el => {
+    Object.keys(trans).forEach(fr => {
+      if (el.textContent.includes(fr)) {
+        el.textContent = el.textContent.replace(fr, trans[fr]);
+      }
+    });
+  });
+  // Also translate .open-special blocks
+  document.querySelectorAll('.open-special').forEach(el => {
+    const cleanText = el.textContent.trim();
+    Object.keys(trans).forEach(fr => {
+      if (cleanText === fr) {
+        el.textContent = trans[fr];
+      } else if (el.innerHTML.includes(fr)) {
+        el.innerHTML = el.innerHTML.replace(fr, trans[fr]);
+      }
+    });
+  });
+  ['line1', 'line2'].forEach(cls => {
+    const el = document.querySelector(`.ingredients .${cls}`);
+    if (el) {
+      Object.keys(trans).forEach(fr => {
+        if (el.textContent.includes(fr)) {
+          el.textContent = el.textContent.replace(fr, trans[fr]);
+        }
+      });
+    }
+  });
+  document.querySelectorAll('nav a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && !href.startsWith('#') && !href.includes('lang=')) {
+      link.setAttribute('href', href + '?lang=' + currentLang);
+    }
+  });
+  const menuLink = Array.from(document.querySelectorAll('nav a')).find(a => a.textContent.includes("Menu") || a.textContent.includes("La carte"));
+  if (menuLink) {
+    menuLink.setAttribute('href', currentLang === 'en' ? 'menu.html' : 'carte.html');
+  }
+    document.getElementById('lang-switch').innerHTML = `<img src="assets/images/${currentLang === 'fr' ? 'anglais' : 'francais'}.png" alt="Switch to ${currentLang === 'fr' ? 'English' : 'Français'}" style="height: 20px; vertical-align: middle;" />`;
+  // Update hero button based on language on first load
+  const heroBtn = document.getElementById('hero-btn');
+  if (heroBtn) {
+    heroBtn.href = currentLang === 'en' ? 'menu.html' : 'carte.html';
+    heroBtn.textContent = currentLang === 'en' ? 'See the menu' : 'Voir le menu';
+  }
+}
+
+    document.getElementById('lang-switch').addEventListener('click', function (e) {
+      e.preventDefault();
+      const toLang = currentLang === 'fr' ? 'en' : 'fr';
+      const trans = translations[toLang];
+      document.querySelectorAll('a, h1, h2, p, li, .schedule-entry span, .schedule-entry strong').forEach(el => {
+        Object.keys(trans).sort((a, b) => b.length - a.length).forEach(fr => {
+          if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+            el.textContent = el.textContent.replace(fr, trans[fr]);
+          } else if (el.innerHTML.includes(fr)) {
+            el.innerHTML = el.innerHTML.replace(fr, trans[fr]);
+          }
+        });
+      });
+      // Also translate captions
+      document.querySelectorAll('.caption').forEach(el => {
+        Object.keys(trans).forEach(fr => {
+          if (el.textContent.includes(fr)) {
+            el.textContent = el.textContent.replace(fr, trans[fr]);
+          }
+        });
+      });
+      // Also translate .open-special blocks
+      document.querySelectorAll('.open-special').forEach(el => {
+        const cleanText = el.textContent.trim();
+        Object.keys(trans).forEach(fr => {
+          if (cleanText === fr) {
+            el.textContent = trans[fr];
+          } else if (el.innerHTML.includes(fr)) {
+            el.innerHTML = el.innerHTML.replace(fr, trans[fr]);
+          }
+        });
+      });
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.includes('lang=')) {
+          link.setAttribute('href', href + '?lang=' + toLang);
+        }
+      });
+      // Traduire les deux lignes d'ingrédients séparément
+      ['line1', 'line2'].forEach(cls => {
+        const el = document.querySelector(`.ingredients .${cls}`);
+        if (el) {
+          Object.keys(trans).forEach(fr => {
+            if (el.textContent.includes(fr)) {
+              el.textContent = el.textContent.replace(fr, trans[fr]);
+            }
+          });
+        }
+      });
+      window.location.href = window.location.pathname + '?lang=' + toLang;
+      // Update the menu link href according to language
+      const menuLink = Array.from(document.querySelectorAll('nav a')).find(a => a.textContent.includes("Menu") || a.textContent.includes("La carte"));
+      if (menuLink) {
+        menuLink.setAttribute('href', toLang === 'en' ? 'menu.html' : 'carte.html');
+      }
+      // Update hero button based on language
+      const heroBtn = document.getElementById('hero-btn');
+      if (heroBtn) {
+        heroBtn.href = toLang === 'en' ? 'menu.html' : 'carte.html';
+        heroBtn.textContent = toLang === 'en' ? 'See the menu' : 'Voir le menu';
+      }
+      this.innerHTML = `<img src="assets/images/${toLang === 'fr' ? 'anglais' : 'francais'}.png" alt="Switch to ${toLang === 'fr' ? 'English' : 'Français'}" style="height: 20px; vertical-align: middle;" />`;
+    });
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('shrunk');
+      } else {
+        header.classList.remove('shrunk');
+      }
+    });
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('active');
+      if (mainNav.classList.contains('active')) {
+        menuToggle.textContent = '✖';
+      } else {
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+</html>

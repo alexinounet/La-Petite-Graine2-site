@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos produits - La Petite Graine</title>
+  <meta name="description" content="La Petite Graine est une cantine végétalienne proposant une cuisine saine, éthique et accessible." />
+  <meta name="keywords" content="cantine végétalienne, cuisine saine, éthique, La Petite Graine, Limoges" />
+  <meta name="author" content="La Petite Graine" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Petite Graine",
+    "image": "https://www.lapetitegraine.fr/assets/images/logo-la-petite-graine.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2 Rue Dalesme",
+      "addressLocality": "Limoges",
+      "postalCode": "87000",
+      "addressCountry": "FR"
+    },
+    "telephone": "+33587296747",
+    "openingHours": [
+      "Tu-Fr 10:00-18:00",
+      "Sa 10:00-19:00"
+    ],
+    "url": "https://www.lapetitegraine.fr"
+  }
+  </script>
+  <link rel="preload" as="image" href="assets/images/plat1.jpg">
+  <link rel="preload" as="image" href="assets/images/plat2.jpg">
+  <link rel="preload" as="image" href="assets/images/plat3.jpg">
+  <link rel="preload" as="image" href="assets/images/plat4.jpg">
+  <link rel="preload" as="image" href="assets/images/plat5.jpg">
+  <link rel="preload" as="image" href="assets/images/plat6.jpg">
+  <link rel="preload" as="image" href="assets/images/plat7.jpg">
+  <link rel="icon" href="assets/images/logo-la-petite-graine.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f6fdf7;
+      color: #2e7d32;
+      line-height: 1.6;
+      padding-top: 80px;
+    }
+
+    section {
+      max-width: 800px;
+      background: white;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid #dce8dc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* --- Product Masonry Gallery Modern Styles --- */
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .product-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .product-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .product-item:hover img {
+      transform: scale(1.05);
+    }
+    .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .product-item:hover .caption {
+      opacity: 1;
+    }
+
+    /* --- Dessert Gallery Modern Styles --- */
+    .dessert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .dessert-grid img {
+      border-radius: 12px;
+      width: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 16px rgba(46,125,50,0.07);
+      background: #f8fbf9;
+      object-fit: cover;
+      height: 180px;
+    }
+    .dessert-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 32px rgba(46,125,50,0.13);
+      z-index: 1;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #c8e6c9;
+    }
+
+    #infinite-slider img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.6s ease;
+    }
+    #infinite-slider:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">La Petite Graine</a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="carte.html">La carte</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="nos-produits.html" class="active">Nos produits</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" id="lang-switch"><img src="assets/images/anglais.png" alt="Switch to English" style="height: 20px; vertical-align: middle;" loading="lazy" /></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="site-main" role="main">
+    <section style="max-width: 1200px; margin: auto; padding: 3rem 1rem; background: #fff;">
+      <h1 style="text-align: center; font-size: 2.5rem; color: #2e7d32;">Nos plats et desserts</h1>
+      <p style="text-align: center; margin: 0 auto 2.5rem; max-width: 800px; font-size: 1.1rem; line-height: 1.8; color: #444;">
+        <strong>Chaque jour, notre équipe prépare avec passion une cuisine végétalienne inspirée du potager de La Petite Graine.</strong><br /><br />
+        <span data-i18n="intro_paragraph" style="display: inline-block; max-width: 700px;">Tous nos plats sont faits maison, élaborés à partir de produits frais, locaux, et cueillis avec soin. Nous croyons qu’une alimentation éthique et responsable peut aussi être riche en saveurs, élégante, et généreuse. Goûtez à l’authenticité du végétal, dans un cadre chaleureux et engagé.</span>
+      </p>
+
+      <style>
+        /* Inline style for card and grid already moved to head for maintainability */
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .main-nav {
+      display: none;
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    .main-nav.active {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .main-nav ul {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .main-nav ul li {
+      width: 100%;
+    }
+
+    .main-nav ul li a {
+      display: block;
+      padding: 0.5rem;
+    }
+  }
+  </style>
+
+      <div class="product-gallery">
+        <div class="product-item">
+          <img src="assets/images/burgervege.jpg" alt="Burger vegan au sésame" loading="lazy" />
+          <div class="caption">Burger vegan au sésame</div>
+        </div>
+        <div class="product-item">
+          <img src="assets/images/falafelsroti.jpg" alt="Falafels rôtis maison" loading="lazy" />
+          <div class="caption">Falafels rôtis maison</div>
+        </div>
+        <div class="product-item">
+          <img src="assets/images/tartinehoumous.jpg" alt="Tartines de Houmous" loading="lazy" />
+          <div class="caption">Tartines de Houmous</div>
+        </div>
+        <div class="product-item">
+          <img src="assets/images/veggie.jpg" alt="Assiette veggie colorée" loading="lazy" />
+          <div class="caption">Assiette veggie colorée</div>
+        </div>
+      </div>
+
+      <h2 style="text-align: center; margin-top: 4rem; color: #2e7d32;">Desserts maison</h2>
+      <p style="text-align: center; margin-bottom: 2rem; color: #555;">Sans gluten & sans sucre raffiné</p>
+
+      <div class="dessert-grid">
+        <img src="assets/images/dessert1.jpg" alt="Cake moelleux au citron" loading="lazy" />
+        <img src="assets/images/dessert2.jpg" alt="Gâteau au chocolat et noisettes" loading="lazy" />
+        <img src="assets/images/dessert3.jpg" alt="Boules d’énergie coco cacao" loading="lazy" />
+        <img src="assets/images/dessert4.jpg" alt="Tarte framboise crémeuse" loading="lazy" />
+        <img src="assets/images/dessert5.jpg" alt="Panna cotta aux fruits rouges" loading="lazy" />
+        <img src="assets/images/dessert6.jpg" alt="Cheesecake citron sans gluten" loading="lazy" />
+        <img src="assets/images/dessert7.jpg" alt="Carrés pommes rhubarbe" loading="lazy" />
+        <img src="assets/images/dessert8.jpg" alt="Tarte pistache fleurie" loading="lazy" />
+      </div>
+
+      <div style="margin-top: 3rem; background: #e8f5e9; padding: 1rem; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 220px; margin-left: auto; margin-right: auto; font-size: 0.9rem;">
+        <h3 style="text-align: center; color: #2e7d32; font-size: 1.5rem; margin-bottom: 1rem;">Et plus encore...</h3>
+        <div id="infinite-slider" style="overflow: hidden; border-radius: 10px; width: 100%; height: 220px;">
+          <img id="slider-image" src="assets/images/plat1.jpg" alt="Plat du jour" style="width: 100%; height: 220px; object-fit: cover; display: block; transition: opacity 0.5s ease;" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <div class="footer-column">
+      <p>2 Rue Dalesme<br />87000 Limoges<br />France</p>
+    </div>
+    <div class="footer-column footer-logo">
+      <img src="assets/images/logo-la-petite-graine.png" alt="Logo La Petite Graine" loading="lazy" />
+    </div>
+    <div class="footer-column">
+      <p><em>Horaires :</em><br />
+      <em>Mardi - Vendredi : 10h - 18h</em><br />
+      <em>Samedi : 10h - 19h</em></p>
+      <p style="margin-top: 1rem;">
+        <a href="tel:+33587296747" style="color: white; text-decoration: underline;">05 87 29 67 47</a><br />
+        <a href="tel:+33684686877" style="color: white; text-decoration: underline;">06 84 68 68 77</a><br />
+        <a href="mailto:nbp.restaurant@gmail.com" style="color: white; text-decoration: underline;">nbp.restaurant@gmail.com</a>
+      </p>
+      <div class="social-icons" style="margin-top: 1rem;">
+        <a href="https://www.facebook.com/cantinelapetitegraine/" target="_blank" title="Facebook">
+          <img src="assets/images/logo-facebook.png" alt="Facebook" loading="lazy" />
+        </a>
+        <a href="https://www.instagram.com/lapetitegraine/?hl=fr" target="_blank" title="Instagram">
+          <img src="assets/images/logo-instagram.png" alt="Instagram" loading="lazy" />
+        </a>
+        <a href="https://www.youtube.com/watch?v=wNPdCmf6W2w" target="_blank" title="YouTube">
+          <img src="assets/images/logo-youtube.png" alt="YouTube" loading="lazy" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "Desserts maison": "Homemade desserts",
+        "Accueil": "Home",
+        "À propos": "About",
+        "Nos produits": "Our Products",
+        "La carte": "Menu",
+        "Contact": "Contact",
+        "À propos de La Petite Graine": "About La Petite Graine",
+        "La Petite Graine est une cantine végétalienne fondée avec amour, passion et respect de l’environnement. Notre mission est de proposer une cuisine saine, éthique et accessible à toutes et tous, sans compromis sur le goût.": "La Petite Graine is a vegan canteen founded with love, passion, and respect for the environment. Our mission is to offer healthy, ethical, and accessible cuisine for all, without compromising on taste.",
+        "Nous croyons que manger végétal peut être un plaisir pour les papilles, un geste pour la planète, et un moment de convivialité. Venez découvrir notre univers culinaire engagé et bienveillant.": "We believe that eating plant-based can be a pleasure for the taste buds, a gesture for the planet, and a moment of togetherness. Come discover our committed and caring culinary world.",
+        "Horaires :": "Opening Hours:",
+        "Mardi - Vendredi : 10h - 18h": "Tuesday - Friday: 10am - 6pm",
+        "Samedi : 10h - 19h": "Saturday: 10am - 7pm",
+        // Extended translations:
+        "Nos plats et desserts": "Our dishes and desserts",
+        "Desserts maison": "Homemade desserts",
+        "Sans gluten & sans sucre raffiné": "Gluten-free & refined sugar-free",
+        "Et plus encore...": "And more...",
+        "Chaque jour, notre équipe prépare avec passion une cuisine végétalienne inspirée du potager de La Petite Graine.": "Every day, our team passionately prepares vegan cuisine inspired by La Petite Graine's garden.",
+        "Tous nos plats sont faits maison, élaborés à partir de produits frais, locaux, et cueillis avec soin. Nous croyons qu’une alimentation éthique et responsable peut aussi être riche en saveurs, élégante, et généreuse. Goûtez à l’authenticité du végétal, dans un cadre chaleureux et engagé.": "All our dishes are homemade, crafted from fresh, local produce harvested with care. We believe ethical and responsible food can also be flavorful, elegant, and generous. Experience the authenticity of plant-based cuisine in a warm and committed setting.",
+        "intro_paragraph": "All our dishes are homemade, crafted from fresh, local produce harvested with care. We believe ethical and responsible food can also be flavorful, elegant, and generous. Experience the authenticity of plant-based cuisine in a warm and committed setting.",
+        "Burger vegan au sésame": "Sesame vegan burger",
+        "Falafels rôtis maison": "Homemade roasted falafels",
+        "Assiette veggie colorée": "Colorful veggie plate",
+        "Tartines de Houmous": "Houmous tartines",
+        "Cake moelleux au citron": "Soft lemon cake",
+        "Gâteau au chocolat et noisettes": "Chocolate hazelnut cake",
+        "Boules d’énergie coco cacao": "Coconut cocoa energy balls",
+        "Tarte framboise crémeuse": "Creamy raspberry tart",
+        "Panna cotta aux fruits rouges": "Red fruit panna cotta",
+        "Cheesecake citron sans gluten": "Gluten-free lemon cheesecake",
+        "Carrés pommes rhubarbe": "Apple rhubarb bars",
+        "Tarte pistache fleurie": "Floral pistachio tart",
+        "Plat du jour": "Dish of the day"
+      },
+      fr: {
+        "Homemade desserts": "Desserts maison",
+        "Home": "Accueil",
+        "About": "À propos",
+        "Our Products": "Nos produits",
+        "Menu": "La carte",
+        "Contact": "Contact",
+        "About La Petite Graine": "À propos de La Petite Graine",
+        "La Petite Graine is a vegan canteen founded with love, passion, and respect for the environment. Our mission is to offer healthy, ethical, and accessible cuisine for all, without compromising on taste.": "La Petite Graine est une cantine végétalienne fondée avec amour, passion et respect de l’environnement. Notre mission est de proposer une cuisine saine, éthique et accessible à toutes et tous, sans compromis sur le goût.",
+        "We believe that eating plant-based can be a pleasure for the taste buds, a gesture for the planet, and a moment of togetherness. Come discover our committed and caring culinary world.": "Nous croyons que manger végétal peut être un plaisir pour les papilles, un geste pour la planète, et un moment de convivialité. Venez découvrir notre univers culinaire engagé et bienveillant.",
+        "Opening Hours:": "Horaires :",
+        "Tuesday - Friday: 10am - 6pm": "Mardi - Vendredi : 10h - 18h",
+        "Saturday: 10am - 7pm": "Samedi : 10h - 19h",
+        // Extended translations (reverse mapping):
+        "Our dishes and desserts": "Nos plats et desserts",
+        "Homemade desserts": "Desserts maison",
+        "Gluten-free & refined sugar-free": "Sans gluten & sans sucre raffiné",
+        "And more...": "Et plus encore...",
+        "Every day, our team passionately prepares vegan cuisine inspired by La Petite Graine's garden.": "Chaque jour, notre équipe prépare avec passion une cuisine végétalienne inspirée du potager de La Petite Graine.",
+        "All our dishes are homemade, crafted from fresh, local produce harvested with care. We believe ethical and responsible food can also be flavorful, elegant, and generous. Experience the authenticity of plant-based cuisine in a warm and committed setting.": "Tous nos plats sont faits maison, élaborés à partir de produits frais, locaux, et cueillis avec soin. Nous croyons qu’une alimentation éthique et responsable peut aussi être riche en saveurs, élégante, et généreuse. Goûtez à l’authenticité du végétal, dans un cadre chaleureux et engagé.",
+        "intro_paragraph": "Tous nos plats sont faits maison, élaborés à partir de produits frais, locaux, et cueillis avec soin. Nous croyons qu’une alimentation éthique et responsable peut aussi être riche en saveurs, élégante, et généreuse. Goûtez à l’authenticité du végétal, dans un cadre chaleureux et engagé.",
+        "Sesame vegan burger": "Burger vegan au sésame",
+        "Homemade roasted falafels": "Falafels rôtis maison",
+        "Colorful veggie plate": "Assiette veggie colorée",
+        "Houmous tartines": "Tartines de Houmous",
+        "Soft lemon cake": "Cake moelleux au citron",
+        "Chocolate hazelnut cake": "Gâteau au chocolat et noisettes",
+        "Coconut cocoa energy balls": "Boules d’énergie coco cacao",
+        "Creamy raspberry tart": "Tarte framboise crémeuse",
+        "Red fruit panna cotta": "Panna cotta aux fruits rouges",
+        "Gluten-free lemon cheesecake": "Cheesecake citron sans gluten",
+        "Apple rhubarb bars": "Carrés pommes rhubarbe",
+        "Floral pistachio tart": "Tarte pistache fleurie",
+        "Dish of the day": "Plat du jour"
+      }
+    };
+
+    function getLangFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const lang = params.get('lang');
+      return (lang === 'en' || lang === 'fr') ? lang : 'fr';
+    }
+
+    function updateLinksLangParam(toLang) {
+      document.querySelectorAll('nav ul li a[href]').forEach(link => {
+        const url = new URL(link.href, window.location.origin);
+        url.searchParams.set('lang', toLang);
+        link.href = url.pathname + url.search + url.hash;
+      });
+      // Also update footer links if needed (tel/mail links excluded)
+      // No changes for tel: or mailto: links
+    }
+
+    let currentLang = getLangFromUrl();
+    updateLinksLangParam(currentLang);
+
+    // Translation logic for data-i18n
+    function applyTranslations(lang) {
+      const trans = translations[lang];
+      // Replace text for elements with data-i18n attribute
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (trans[key]) {
+          el.textContent = trans[key];
+        }
+      });
+      // Fallback: classic string replace for other elements
+      document.querySelectorAll('a, h1, h2, p, li, span, strong, div.caption').forEach(el => {
+        Object.keys(trans).forEach(fr => {
+          if (el.hasAttribute('data-i18n')) return; // skip data-i18n elements already handled
+          if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+            el.textContent = el.textContent.replace(fr, trans[fr]);
+          } else if (el.innerHTML.includes(fr)) {
+            el.innerHTML = el.innerHTML.replace(fr, trans[fr]);
+          }
+        });
+      });
+      // Update alt attributes for product/dessert images and slider
+      document.querySelectorAll('img[alt]').forEach(img => {
+        if (trans[img.alt]) img.alt = trans[img.alt];
+      });
+    }
+
+    // If currentLang is 'en', update page content and lang-switch icon on load
+    if (currentLang === 'en') {
+      applyTranslations('en');
+      document.getElementById('lang-switch').innerHTML = `<img src="assets/images/francais.png" alt="Switch to Français" style="height: 20px; vertical-align: middle;" />`;
+      updateLinksLangParam(currentLang);
+    }
+
+    document.getElementById('lang-switch').addEventListener('click', function (e) {
+      e.preventDefault();
+      const toLang = currentLang === 'fr' ? 'en' : 'fr';
+      applyTranslations(toLang);
+      currentLang = toLang;
+      this.innerHTML = `<img src="assets/images/${toLang === 'fr' ? 'anglais' : 'francais'}.png" alt="Switch to ${toLang === 'fr' ? 'English' : 'Français'}" style="height: 20px; vertical-align: middle;" />`;
+      updateLinksLangParam(toLang);
+      // Update URL without reloading page to reflect language param
+      const url = new URL(window.location);
+      url.searchParams.set('lang', toLang);
+      window.history.replaceState({}, '', url);
+    });
+
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('shrunk');
+      } else {
+        header.classList.remove('shrunk');
+      }
+    });
+  </script>
+
+  <script>
+    const images = [
+      'assets/images/plat1.jpg',
+      'assets/images/plat2.jpg',
+      'assets/images/plat3.jpg',
+      'assets/images/plat4.jpg',
+      'assets/images/plat5.jpg',
+      'assets/images/plat6.jpg',
+      'assets/images/plat7.jpg'
+    ];
+    let currentIndex = 0;
+    const sliderImage = document.getElementById('slider-image');
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      sliderImage.style.opacity = 0;
+      setTimeout(() => {
+        sliderImage.src = images[currentIndex];
+        sliderImage.style.opacity = 1;
+      }, 400);
+    }, 6000);
+  </script>
+</body>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    menuToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('active');
+      if (mainNav.classList.contains('active')) {
+        menuToggle.textContent = '✖';
+      } else {
+        menuToggle.textContent = '☰';
+      }
+    });
+  </script>
+</html>
